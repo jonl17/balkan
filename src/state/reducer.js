@@ -2,7 +2,7 @@ import { SET_DEVICE, RESIZE_HEADER } from "./action"
 
 const initialState = {
   device: undefined,
-  headerFullSize: true,
+  headerFullSize: false,
 }
 
 export default (state = initialState, action) => {

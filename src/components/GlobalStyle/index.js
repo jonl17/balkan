@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 import Font from "../../../static/assets/Balkan.ttf"
+import { styles } from "../../constants"
 
 export const GlobalStyle = createGlobalStyle`
     @font-face {
@@ -8,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     * {
         font-family: Balkan;
+        color: ${styles.color.black};
     }
     html, body {
         margin: 0;

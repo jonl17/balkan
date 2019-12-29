@@ -23,5 +23,6 @@ export const Container = styled.div`
 export const Text = styled.p`
   transform: rotate(${props => props.rotation});
   margin: 0;
+  text-transform: uppercase;
 `
 export const Anchor = styled(Link)``

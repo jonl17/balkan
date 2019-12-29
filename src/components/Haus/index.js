@@ -4,6 +4,8 @@ import { useSelector } from "react-redux"
 /** components */
 import { Container, Word, Letter } from "./Styled"
 
+const verkefniTitle = [`Mæna`, `2019`]
+
 const Haus = ({
   data: {
     site: {
@@ -12,9 +14,13 @@ const Haus = ({
   },
 }) => {
   const headerFullSize = useSelector(state => state.reducer.headerFullSize)
+  var displayTitle = title
+  if (headerFullSize) {
+    displayTitle = verkefniTitle
+  }
   return (
     <Container>
-      {title.map((item, index) => (
+      {displayTitle.map((item, index) => (
         <Word size={headerFullSize ? "100%" : "10%"} key={index}>
           {item.split("").map((letter, index /** Balkan */) => (
             <Letter key={index}>{letter}</Letter>

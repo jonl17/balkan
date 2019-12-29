@@ -7,7 +7,7 @@
 module.exports = {
   siteMetadata: {
     title: [`Balkan`, `Studio`],
-    navitems: [`Contact`, `Instagram`, `Projects`, `About`],
+    navitems: [`Contact`, `Instagram`, `About`],
   },
   plugins: [
     {

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 
 /** components */
-import { Container, Anchor, Text } from "./Styled"
+import { Container, Text } from "./Styled"
 
 /**
  *  Left || Right
