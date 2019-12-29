@@ -5,6 +5,7 @@ import { GlobalStyle } from "../components/GlobalStyle"
 
 /** components */
 import Haus from "../components/Haus"
+import Sidebar from "../components/Sidebar"
 
 class Layout extends React.Component {
   constructor(props) {
@@ -29,8 +30,9 @@ class Layout extends React.Component {
         <GlobalStyle></GlobalStyle>
         {/* SEO */}
         <Haus></Haus>
+        <Sidebar position={`left`}></Sidebar>
+        <Sidebar position={`right`}></Sidebar>
         {this.props.children}
-        {/* fótur */}
       </>
     )
   }

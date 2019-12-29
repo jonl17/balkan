@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { styles } from "../../../constants"
 
 export const Container = styled.div`
   height: auto;
@@ -15,7 +16,7 @@ export const Word = styled.h1`
   display: flex;
   justify-content: space-around;
   margin: auto;
-  transition: 0.5s ease-in-out;
+  transition: ${styles.transition};
   width: ${props => props.size};
 `
 export const Letter = styled.span``
