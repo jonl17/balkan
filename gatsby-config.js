@@ -5,6 +5,10 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: [`Balkan`, `Studio`],
+    navitems: [`Contact`, `Instagram`, `Projects`, `About`],
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -38,5 +42,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-layout`,
   ],
 }

@@ -1,8 +1,10 @@
 import React from "react"
-import { Container } from "./Styled"
 import { connect } from "react-redux"
 import { setDevice } from "../state/action"
 import { GlobalStyle } from "../components/GlobalStyle"
+
+/** components */
+import Haus from "../components/Haus"
 
 class Layout extends React.Component {
   constructor(props) {
@@ -21,11 +23,15 @@ class Layout extends React.Component {
     dispatch(setDevice(window.innerWidth))
   }
   render() {
+    console.log(this.props.device)
     return (
-      <Container>
+      <>
         <GlobalStyle></GlobalStyle>
+        {/* SEO */}
+        <Haus></Haus>
         {this.props.children}
-      </Container>
+        {/* fótur */}
+      </>
     )
   }
 }

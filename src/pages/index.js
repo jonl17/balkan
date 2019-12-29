@@ -1,3 +1,8 @@
 import React from "react"
+import Takki from "../components/Takki"
 
-export default () => <div>Hello world!</div>
+const index = () => {
+  return <Takki></Takki>
+}
+
+export default index
