@@ -12,11 +12,13 @@ const Takkinn = styled.p`
   }
 `
 
+const GoGo = dispatch => {
+  dispatch(resizeHeader())
+}
+
 const Takki = () => {
   const dispatch = useDispatch()
-  return (
-    <Takkinn onClick={() => dispatch(resizeHeader())}>Smelltu hér!</Takkinn>
-  )
+  return <Takkinn onClick={() => GoGo(dispatch)}>Smelltu hér!</Takkinn>
 }
 
 export default Takki

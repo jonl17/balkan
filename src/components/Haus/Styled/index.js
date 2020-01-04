@@ -1,14 +1,5 @@
-import styled, { keyframes, css } from "styled-components"
+import styled from "styled-components"
 import { styles } from "../../../constants"
-
-const fade = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`
 
 export const Container = styled.div`
   height: auto;
@@ -26,13 +17,8 @@ export const Word = styled.h1`
   margin: 0;
   display: flex;
   justify-content: space-around;
-  transition: ${styles.transition};
+  transition: 0.12s ease-out;
   width: ${props => props.size};
   padding: 0 5px 0 5px;
-  ${props =>
-    props.size === `10%` &&
-    css`
-      animation: ${fade} 0.2s ease-in-out 0s;
-    `}
 `
 export const Letter = styled.span``
