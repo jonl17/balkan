@@ -4,6 +4,12 @@ export const setDevice = width => ({
   width,
 })
 export const RESIZE_HEADER = "RESIZE_HEADER"
-export const resizeHeader = () => ({
+export const resizeHeader = size => ({
   type: RESIZE_HEADER,
+  size,
+})
+export const SET_VERKEFNI_TITLE = "SET_VERKEFNI_TITLE"
+export const setVerkefniTitle = title => ({
+  type: SET_VERKEFNI_TITLE,
+  title,
 })
