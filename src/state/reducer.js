@@ -1,9 +1,15 @@
-import { SET_DEVICE, RESIZE_HEADER, SET_VERKEFNI_TITLE } from "./action"
+import {
+  SET_DEVICE,
+  RESIZE_HEADER,
+  SET_VERKEFNI_TITLE,
+  SELECT_VERKEFNI,
+} from "./action"
 
 const initialState = {
   device: undefined,
   headerFullSize: false,
   verkefniTitle: undefined,
+  selectedVerkefni: undefined,
 }
 
 export default (state = initialState, action) => {
@@ -24,6 +30,8 @@ export default (state = initialState, action) => {
       return { ...state, headerFullSize: action.size }
     case SET_VERKEFNI_TITLE:
       return { ...state, verkefniTitle: action.title }
+    case SELECT_VERKEFNI:
+      return { ...state, selectedVerkefni: action.title }
     default:
       return state
   }

@@ -1,6 +1,10 @@
 import React from "react"
-import { useDispatch } from "react-redux"
-import { resizeHeader, setVerkefniTitle } from "../../../../state/action"
+import { useDispatch, useSelector } from "react-redux"
+import {
+  resizeHeader,
+  setVerkefniTitle,
+  selectVerkefni,
+} from "../../../../state/action"
 
 /** components */
 import { Box } from "./Styled"
@@ -15,8 +19,11 @@ const callBackNarrow = dispatch => {
 
 const Verk = ({ color }) => {
   const dispatch = useDispatch()
+  const selectedVerkefni = useSelector(state => state.reducer.selectedVerkefni)
   return (
     <Box
+      selected={selectedVerkefni === color ? "true" : "false"}
+      onClick={() => dispatch(selectVerkefni(color))}
       onMouseOver={() => callBackWide(dispatch, color)}
       onMouseLeave={() => callBackNarrow(dispatch)}
       color={color}

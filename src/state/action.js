@@ -13,3 +13,8 @@ export const setVerkefniTitle = title => ({
   type: SET_VERKEFNI_TITLE,
   title,
 })
+export const SELECT_VERKEFNI = "SELECT_VERKEFNI"
+export const selectVerkefni = title => ({
+  type: SELECT_VERKEFNI,
+  title,
+})

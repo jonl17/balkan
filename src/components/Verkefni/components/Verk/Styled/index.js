@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const Box = styled.div`
   height: 100%;
@@ -10,4 +10,11 @@ export const Box = styled.div`
     cursor: pointer;
     filter: blur(0px);
   }
+  ${props =>
+    props.selected === `true` &&
+    css`
+      filter: blur(0px);
+      width: 75%;
+      height: 75%;
+    `}
 `
