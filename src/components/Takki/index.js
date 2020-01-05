@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux"
 import { resizeHeader } from "../../state/action"
 
 const Takkinn = styled.p`
+  display: none;
   position: absolute;
   bottom: 25%;
   left: 25%;

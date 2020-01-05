@@ -1,8 +1,11 @@
 import React from "react"
+
+/** components */
 import Takki from "../components/Takki"
+import Verkefni from "../components/Verkefni"
 
 const index = () => {
-  return <Takki></Takki>
+  return <Verkefni></Verkefni>
 }
 
 export default index
