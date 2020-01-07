@@ -13,7 +13,12 @@ const Verkefni = ({
   return (
     <Container>
       {verkefni.map((item, index) => (
-        <Verk key={index} color={item.frontmatter.color}></Verk>
+        <Verk
+          max={verkefni.length}
+          index={index}
+          key={index}
+          color={item.frontmatter.color}
+        ></Verk>
       ))}
     </Container>
   )

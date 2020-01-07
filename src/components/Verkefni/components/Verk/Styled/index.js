@@ -11,7 +11,7 @@ export const Box = styled.div`
     filter: blur(0px);
   }
   ${props =>
-    props.selected === `true` &&
+    props.selected &&
     css`
       filter: blur(0px);
       width: 75%;

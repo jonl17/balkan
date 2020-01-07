@@ -14,7 +14,8 @@ export const setVerkefniTitle = title => ({
   title,
 })
 export const SELECT_VERKEFNI = "SELECT_VERKEFNI"
-export const selectVerkefni = title => ({
+export const selectVerkefni = (title, index) => ({
   type: SELECT_VERKEFNI,
   title,
+  index,
 })

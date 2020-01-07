@@ -18,4 +18,8 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 25px;
         font-weight: normal;
     }
+    /** notað í forsíðu þegar verkefni er valið */
+    .hiddenProject {
+        display: none;
+    }
 `

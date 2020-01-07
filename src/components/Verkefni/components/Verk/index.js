@@ -17,13 +17,27 @@ const callBackNarrow = dispatch => {
   dispatch(resizeHeader("Narrow"))
 }
 
-const Verk = ({ color }) => {
+const calculateIndexesToShow = (selectedIndex, thisIndex, max) => {
+  if (thisIndex === selectedIndex) return thisIndex
+  if (thisIndex === selectedIndex + 1) return thisIndex
+  if (selectedIndex === max - 1 /** max */) return 0
+}
+
+const Verk = ({ color, index, max }) => {
   const dispatch = useDispatch()
   const selectedVerkefni = useSelector(state => state.reducer.selectedVerkefni)
+  const selectedIndex = useSelector(state => state.reducer.selectedIndex)
+  console.log(calculateIndexesToShow(selectedIndex, index, max))
   return (
     <Box
-      selected={selectedVerkefni === color ? "true" : "false"}
-      onClick={() => dispatch(selectVerkefni(color))}
+      className={
+        calculateIndexesToShow(selectedIndex, index, max) === index ||
+        selectedIndex === undefined
+          ? ""
+          : "hiddenProject"
+      }
+      selected={selectedVerkefni === color ? true : false}
+      onClick={() => dispatch(selectVerkefni(color, index))}
       onMouseOver={() => callBackWide(dispatch, color)}
       onMouseLeave={() => callBackNarrow(dispatch)}
       color={color}

@@ -24,7 +24,6 @@ class Layout extends React.Component {
     dispatch(setDevice(window.innerWidth))
   }
   render() {
-    console.log(this.props.device)
     return (
       <>
         <GlobalStyle></GlobalStyle>

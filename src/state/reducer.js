@@ -10,6 +10,7 @@ const initialState = {
   headerFullSize: false,
   verkefniTitle: undefined,
   selectedVerkefni: undefined,
+  selectedIndex: undefined,
 }
 
 export default (state = initialState, action) => {
@@ -31,7 +32,11 @@ export default (state = initialState, action) => {
     case SET_VERKEFNI_TITLE:
       return { ...state, verkefniTitle: action.title }
     case SELECT_VERKEFNI:
-      return { ...state, selectedVerkefni: action.title }
+      return {
+        ...state,
+        selectedVerkefni: action.title,
+        selectedIndex: action.index,
+      }
     default:
       return state
   }

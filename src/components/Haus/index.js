@@ -21,7 +21,7 @@ const Haus = ({
   return (
     <Container>
       {displayTitle.map((item, index) => (
-        <Word size={headerFullSize === "Wide" ? "100%" : "10%"} key={index}>
+        <Word size={headerFullSize === "Wide" ? "100%" : "9%"} key={index}>
           {item.split("").map((letter, index /** Balkan */) => (
             <Letter key={index}>{letter}</Letter>
           ))}
