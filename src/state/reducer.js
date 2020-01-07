@@ -3,6 +3,7 @@ import {
   RESIZE_HEADER,
   SET_VERKEFNI_TITLE,
   SELECT_VERKEFNI,
+  CHANGE_VERKEFNI_DIRECTION,
 } from "./action"
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
   verkefniTitle: undefined,
   selectedVerkefni: undefined,
   selectedIndex: undefined,
+  verkefniDirection: "forwards",
 }
 
 export default (state = initialState, action) => {
@@ -37,6 +39,8 @@ export default (state = initialState, action) => {
         selectedVerkefni: action.title,
         selectedIndex: action.index,
       }
+    case CHANGE_VERKEFNI_DIRECTION:
+      return { ...state, verkefniDirection: action.direction }
     default:
       return state
   }

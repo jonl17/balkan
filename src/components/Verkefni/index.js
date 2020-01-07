@@ -14,7 +14,7 @@ const Verkefni = ({
     <Container>
       {verkefni.map((item, index) => (
         <Verk
-          max={verkefni.length}
+          max={verkefni.length - 1}
           index={index}
           key={index}
           color={item.frontmatter.color}

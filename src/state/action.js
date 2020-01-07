@@ -19,3 +19,8 @@ export const selectVerkefni = (title, index) => ({
   title,
   index,
 })
+export const CHANGE_VERKEFNI_DIRECTION = "CHANGE_VERKEFNI_DIRECTION"
+export const changeVerkefniDirection = direction => ({
+  type: CHANGE_VERKEFNI_DIRECTION,
+  direction,
+})
