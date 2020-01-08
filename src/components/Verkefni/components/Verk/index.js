@@ -14,8 +14,9 @@ const callBackWide = (dispatch, color) => {
   dispatch(resizeHeader("Wide"))
   dispatch(setVerkefniTitle(color))
 }
-const callBackNarrow = dispatch => {
+const callBackNarrow = (dispatch, color) => {
   dispatch(resizeHeader("Narrow"))
+  dispatch(setVerkefniTitle(color))
 }
 
 /*
@@ -43,6 +44,7 @@ const Verk = ({ color, index, max }) => {
   if (selectedIndex === 0) {
     dispatch(changeVerkefniDirection("right"))
   }
+  console.log(selectedIndex)
   return (
     <Box
       className={
@@ -56,7 +58,7 @@ const Verk = ({ color, index, max }) => {
         dispatch(selectVerkefni(color, index))
       }}
       onMouseOver={() => callBackWide(dispatch, color)}
-      onMouseLeave={() => callBackNarrow(dispatch)}
+      onMouseLeave={() => callBackNarrow(dispatch, selectedVerkefni)}
       color={color}
     ></Box>
   )

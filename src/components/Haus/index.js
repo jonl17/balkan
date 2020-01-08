@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { useSelector, useDispatch } from "react-redux"
-import { selectVerkefni } from "../../state/action"
+import { selectVerkefni, resizeHeader } from "../../state/action"
 /** components */
 import { Container, Word, Letter, ImageContainer, Image } from "./Styled"
 
@@ -36,7 +36,10 @@ const Haus = ({
       </Container>
       {/* klikk á lógóið af-velur eitthvað sérstakt verkefni  */}
       <ImageContainer
-        onClick={() => dispatch(selectVerkefni(undefined, undefined))}
+        onClick={() => {
+          dispatch(selectVerkefni(undefined, undefined))
+          dispatch(resizeHeader("Narrow"))
+        }}
       >
         <Image fluid={fluid}></Image>
       </ImageContainer>

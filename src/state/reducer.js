@@ -30,7 +30,11 @@ export default (state = initialState, action) => {
       }
       return { ...state, device: device }
     case RESIZE_HEADER:
-      return { ...state, headerFullSize: action.size }
+      let size = action.size
+      if (state.selectedIndex !== undefined) {
+        size = "Wide"
+      }
+      return { ...state, headerFullSize: size }
     case SET_VERKEFNI_TITLE:
       return { ...state, verkefniTitle: action.title }
     case SELECT_VERKEFNI:
