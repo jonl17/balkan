@@ -4,7 +4,7 @@ export const Box = styled.div`
   height: 100%;
   width: 15%;
   background: ${props => props.color};
-  transition: 0.2s;
+  transition: 0.5s;
   filter: blur(3px);
   &&:hover {
     cursor: pointer;

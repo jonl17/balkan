@@ -18,16 +18,14 @@ const callBackNarrow = dispatch => {
   dispatch(resizeHeader("Narrow"))
 }
 
-const calculateIndexesToShow = (selectedIndex, thisIndex, max, direction) => {
+/*
+   Returns indexes that are valid to display.
+*/
+const calculateIndexesToShow = (selectedIndex, thisIndex, direction) => {
   let offset = 1
-  let mutant = 0
-  let stopper = max
-  if (direction === "backwards") {
+  if (direction === "left") {
     offset = -1
-    mutant = max
-    stopper = 0
   }
-
   if (thisIndex === selectedIndex) return thisIndex
   else if (thisIndex === selectedIndex + offset) return thisIndex
 }
@@ -40,15 +38,15 @@ const Verk = ({ color, index, max }) => {
     state => state.reducer.verkefniDirection
   )
   if (selectedIndex === max) {
-    dispatch(changeVerkefniDirection("backwards"))
+    dispatch(changeVerkefniDirection("left"))
   }
   if (selectedIndex === 0) {
-    dispatch(changeVerkefniDirection("forwards"))
+    dispatch(changeVerkefniDirection("right"))
   }
   return (
     <Box
       className={
-        calculateIndexesToShow(selectedIndex, index, max, verkefniDirection) ===
+        calculateIndexesToShow(selectedIndex, index, verkefniDirection) ===
           index || selectedIndex === undefined
           ? ""
           : "hiddenProject"

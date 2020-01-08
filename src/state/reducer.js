@@ -12,7 +12,7 @@ const initialState = {
   verkefniTitle: undefined,
   selectedVerkefni: undefined,
   selectedIndex: undefined,
-  verkefniDirection: "forwards",
+  verkefniDirection: "right",
 }
 
 export default (state = initialState, action) => {
