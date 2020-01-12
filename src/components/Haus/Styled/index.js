@@ -17,7 +17,7 @@ export const Word = styled.h1`
   margin: 0;
   display: flex;
   justify-content: space-around;
-  transition: 0.35s ease-out;
+  transition: 0.4s ease-out;
   letter-spacing: ${props => props.spacing};
   padding: 0 5px 0 5px;
 `

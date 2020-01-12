@@ -19,3 +19,11 @@ export const Box = styled.div`
       height: 75%;
     `}
 `
+export const Video = styled.video`
+  height: 100%;
+  ${props =>
+    props.selected &&
+    css`
+      width: 100%;
+    `}
+`

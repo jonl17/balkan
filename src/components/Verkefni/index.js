@@ -17,7 +17,7 @@ const Verkefni = ({
           max={verkefni.length - 1}
           index={index}
           key={index}
-          title={item.frontmatter.title}
+          verk={item}
         ></Verk>
       ))}
     </Container>

@@ -8,7 +8,7 @@ import {
 } from "../../../../state/action"
 
 /** components */
-import { Box } from "./Styled"
+import { Box, Video } from "./Styled"
 
 const callBackWide = (dispatch, title) => {
   dispatch(resizeHeader("Wide"))
@@ -31,7 +31,14 @@ const calculateIndexesToShow = (selectedIndex, thisIndex, direction) => {
   else if (thisIndex === selectedIndex + offset) return thisIndex
 }
 
-const Verk = ({ title, index, max }) => {
+const Verk = ({
+  verk: {
+    frontmatter: { title, forsidu_video },
+    html,
+  },
+  index,
+  max,
+}) => {
   const dispatch = useDispatch()
   const selectedVerkefni = useSelector(state => state.reducer.selectedVerkefni)
   const selectedIndex = useSelector(state => state.reducer.selectedIndex)
@@ -59,7 +66,12 @@ const Verk = ({ title, index, max }) => {
       onMouseOver={() => callBackWide(dispatch, title)}
       onMouseLeave={() => callBackNarrow(dispatch, selectedVerkefni)}
       title={title}
-    ></Box>
+    >
+      <Video selected={selectedVerkefni === title ? true : false}>
+        <source src={forsidu_video.publicURL} type="video/webm"></source>
+        <source src={forsidu_video.publicURL} type="video/mp4"></source>
+      </Video>
+    </Box>
   )
 }
 
