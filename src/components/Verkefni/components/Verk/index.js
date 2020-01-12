@@ -8,7 +8,8 @@ import {
 } from "../../../../state/action"
 
 /** components */
-import { Box, Video } from "./Styled"
+import { Box } from "./Styled"
+import Video from "./components/Video"
 
 const callBackWide = (dispatch, title) => {
   dispatch(resizeHeader("Wide"))
@@ -67,7 +68,7 @@ const Verk = ({
       onMouseLeave={() => callBackNarrow(dispatch, selectedVerkefni)}
       title={title}
     >
-      <Video muted loop selected={selectedVerkefni === title ? true : false}>
+      <Video selected={selectedVerkefni === title ? true : false}>
         <source src={forsidu_video.publicURL} type="video/webm"></source>
         <source src={forsidu_video.publicURL} type="video/mp4"></source>
       </Video>

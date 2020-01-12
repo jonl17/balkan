@@ -1,6 +1,6 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const Video = styled.video`
+export const VideoComponent = styled.video`
   position: absolute;
   top: 0;
   left: 0;
