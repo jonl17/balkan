@@ -13,4 +13,4 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Lýsing", name: "lysing", widget: "text" }
-      - { label: "Forsíðu mynd", name: "forsidu-mynd", widget: "image" }
+      - { label: "Forsíðu vidjó", name: "forsidu-video", widget: "file" }
