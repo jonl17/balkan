@@ -17,7 +17,7 @@ const Verkefni = ({
           max={verkefni.length - 1}
           index={index}
           key={index}
-          color={item.frontmatter.color}
+          title={item.frontmatter.title}
         ></Verk>
       ))}
     </Container>
@@ -30,8 +30,12 @@ export default props => (
       {
         allMarkdownRemark {
           nodes {
+            html
             frontmatter {
-              color
+              title
+              forsidu_video {
+                publicURL
+              }
             }
           }
         }

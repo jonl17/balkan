@@ -17,7 +17,7 @@ const Haus = ({
 }) => {
   const headerFullSize = useSelector(state => state.reducer.headerFullSize)
   const verkefni = useSelector(state => state.reducer.verkefniTitle)
-  const verkefniTitle = [verkefni, `2020`]
+  const verkefniTitle = [verkefni]
   const dispatch = useDispatch()
   var displayTitle = title
   if (headerFullSize === "Wide") {

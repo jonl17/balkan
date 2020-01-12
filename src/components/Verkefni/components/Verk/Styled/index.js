@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 export const Box = styled.div`
   height: 100%;
   width: 15%;
-  background: ${props => props.color};
+  background: lightgray;
   transition: 0.5s;
   overflow: hidden;
   filter: blur(3px);

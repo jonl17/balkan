@@ -10,13 +10,13 @@ import {
 /** components */
 import { Box } from "./Styled"
 
-const callBackWide = (dispatch, color) => {
+const callBackWide = (dispatch, title) => {
   dispatch(resizeHeader("Wide"))
-  dispatch(setVerkefniTitle(color))
+  dispatch(setVerkefniTitle(title))
 }
-const callBackNarrow = (dispatch, color) => {
+const callBackNarrow = (dispatch, title) => {
   dispatch(resizeHeader("Narrow"))
-  dispatch(setVerkefniTitle(color))
+  dispatch(setVerkefniTitle(title))
 }
 
 /*
@@ -31,7 +31,7 @@ const calculateIndexesToShow = (selectedIndex, thisIndex, direction) => {
   else if (thisIndex === selectedIndex + offset) return thisIndex
 }
 
-const Verk = ({ color, index, max }) => {
+const Verk = ({ title, index, max }) => {
   const dispatch = useDispatch()
   const selectedVerkefni = useSelector(state => state.reducer.selectedVerkefni)
   const selectedIndex = useSelector(state => state.reducer.selectedIndex)
@@ -44,7 +44,6 @@ const Verk = ({ color, index, max }) => {
   if (selectedIndex === 0) {
     dispatch(changeVerkefniDirection("right"))
   }
-  console.log(selectedIndex)
   return (
     <Box
       className={
@@ -53,13 +52,13 @@ const Verk = ({ color, index, max }) => {
           ? ""
           : "hiddenProject"
       }
-      selected={selectedVerkefni === color ? true : false}
+      selected={selectedVerkefni === title ? true : false}
       onClick={() => {
-        dispatch(selectVerkefni(color, index))
+        dispatch(selectVerkefni(title, index))
       }}
-      onMouseOver={() => callBackWide(dispatch, color)}
+      onMouseOver={() => callBackWide(dispatch, title)}
       onMouseLeave={() => callBackNarrow(dispatch, selectedVerkefni)}
-      color={color}
+      title={title}
     ></Box>
   )
 }
