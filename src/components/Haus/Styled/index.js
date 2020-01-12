@@ -8,7 +8,7 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   box-sizing: border-box;
-  padding: 15px 10% 15px 10%;
+  padding: 15px 15% 15px 15%;
   display: flex;
   justify-content: center;
 `
@@ -18,7 +18,7 @@ export const Word = styled.h1`
   display: flex;
   justify-content: space-around;
   transition: 0.35s ease-out;
-  width: ${props => props.size};
+  letter-spacing: ${props => props.spacing};
   padding: 0 5px 0 5px;
 `
 export const Letter = styled.span``
