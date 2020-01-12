@@ -20,6 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     /** notað í forsíðu þegar verkefni er valið */
     .hiddenProject {
-        display: none;
+        width: 0 !important;
     }
 `

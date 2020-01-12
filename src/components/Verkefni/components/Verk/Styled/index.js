@@ -5,6 +5,7 @@ export const Box = styled.div`
   width: 15%;
   background: ${props => props.color};
   transition: 0.5s;
+  overflow: hidden;
   filter: blur(3px);
   &&:hover {
     cursor: pointer;
