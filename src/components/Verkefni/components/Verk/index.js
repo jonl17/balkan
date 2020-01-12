@@ -67,7 +67,7 @@ const Verk = ({
       onMouseLeave={() => callBackNarrow(dispatch, selectedVerkefni)}
       title={title}
     >
-      <Video selected={selectedVerkefni === title ? true : false}>
+      <Video muted loop selected={selectedVerkefni === title ? true : false}>
         <source src={forsidu_video.publicURL} type="video/webm"></source>
         <source src={forsidu_video.publicURL} type="video/mp4"></source>
       </Video>

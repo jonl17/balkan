@@ -6,6 +6,8 @@ export const Box = styled.div`
   background: lightgray;
   transition: 0.5s;
   overflow: hidden;
+  position: relative;
+
   filter: blur(3px);
   &&:hover {
     cursor: pointer;
@@ -15,15 +17,19 @@ export const Box = styled.div`
     props.selected &&
     css`
       filter: blur(0px);
-      width: 75%;
-      height: 75%;
+      width: 70%;
+      height: 85%;
     `}
 `
 export const Video = styled.video`
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
+  object-fit: contain;
   ${props =>
     props.selected &&
     css`
-      width: 100%;
+      height: 100%;
     `}
 `
