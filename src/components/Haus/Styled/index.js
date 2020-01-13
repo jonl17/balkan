@@ -12,7 +12,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
 `
-export const Word = styled.h1`
+export const Word = styled.p`
   text-transform: uppercase;
   margin: 0;
   display: flex;
