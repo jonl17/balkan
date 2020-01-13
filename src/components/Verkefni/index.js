@@ -30,9 +30,9 @@ export default props => (
       {
         allMarkdownRemark {
           nodes {
-            html
             frontmatter {
               title
+              lysing
               forsidu_video {
                 publicURL
               }

@@ -8,7 +8,7 @@ import {
 } from "../../../../state/action"
 
 /** components */
-import { Box } from "./Styled"
+import { Box, Text } from "./Styled"
 import Video from "./components/Video"
 
 const callBackWide = (dispatch, title) => {
@@ -34,8 +34,7 @@ const calculateIndexesToShow = (selectedIndex, thisIndex, direction) => {
 
 const Verk = ({
   verk: {
-    frontmatter: { title, forsidu_video },
-    html,
+    frontmatter: { title, forsidu_video, lysing },
   },
   index,
   max,
@@ -53,26 +52,34 @@ const Verk = ({
     dispatch(changeVerkefniDirection("right"))
   }
   return (
-    <Box
-      className={
-        calculateIndexesToShow(selectedIndex, index, verkefniDirection) ===
-          index || selectedIndex === undefined
-          ? ""
-          : "hiddenProject"
-      }
-      selected={selectedVerkefni === title ? true : false}
-      onClick={() => {
-        dispatch(selectVerkefni(title, index))
-      }}
-      onMouseOver={() => callBackWide(dispatch, title)}
-      onMouseLeave={() => callBackNarrow(dispatch, selectedVerkefni)}
-      title={title}
-    >
-      <Video selected={selectedVerkefni === title ? true : false}>
-        <source src={forsidu_video.publicURL} type="video/webm"></source>
-        <source src={forsidu_video.publicURL} type="video/mp4"></source>
-      </Video>
-    </Box>
+    <>
+      <Box
+        className={
+          calculateIndexesToShow(selectedIndex, index, verkefniDirection) ===
+            index || selectedIndex === undefined
+            ? ""
+            : "hiddenProject"
+        }
+        selected={selectedVerkefni === title ? true : false}
+        onClick={() => {
+          dispatch(selectVerkefni(title, index))
+        }}
+        onMouseOver={() => callBackWide(dispatch, title)}
+        onMouseLeave={() => callBackNarrow(dispatch, selectedVerkefni)}
+        title={title}
+      >
+        <Video selected={selectedVerkefni === title ? true : false}>
+          <source src={forsidu_video.publicURL} type="video/webm"></source>
+          <source src={forsidu_video.publicURL} type="video/mp4"></source>
+        </Video>
+        <Text selected={selectedVerkefni === title ? true : false}>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium dolo remque laudantium, totam rem aperiam, eaque ipsa quae
+          ab illo inventore veritatis et quasi architecto beatae vitae dicta
+          sunt.
+        </Text>
+      </Box>
+    </>
   )
 }
 
