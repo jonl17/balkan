@@ -37,7 +37,7 @@ const calculateIndexesToShow = (selectedIndex, thisIndex, direction) => {
 const Verk = ({
   animationdelay,
   verk: {
-    frontmatter: { title, forsidu_video },
+    frontmatter: { title, forsidu_video, lysing },
   },
   index,
   max,
@@ -87,6 +87,7 @@ const Verk = ({
         <Description
           selected={selectedVerkefni === title ? true : false}
           title={title}
+          lysing={lysing}
         ></Description>
       </Box>
     </>

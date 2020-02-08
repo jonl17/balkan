@@ -31,7 +31,6 @@ const Video = ({ selected, children, uniqueid, animationdelay }) => {
       vidRef.current.pause()
     }
   })
-  console.log("DELAY" + animationdelay / 2)
   return (
     <VideoComponent
       animationdelay={animationdelay / 7}
