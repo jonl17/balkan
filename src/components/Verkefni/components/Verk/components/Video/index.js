@@ -8,11 +8,15 @@ const Video = ({ selected, children, uniqueid }) => {
     console.log("YAO")
   }
   const vidRef = useRef()
+
   useEffect(() => {
-    document
-      .getElementById(uniqueid + "-video")
-      .addEventListener("canplaythrough", () => canPlayCallBack())
-  })
+    const timer = setTimeout(() => {
+      document
+        .getElementById(uniqueid + "-video")
+        .addEventListener("canplaythrough", canPlayCallBack())
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [])
 
   useEffect(() => {
     if (selected) {
