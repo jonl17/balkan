@@ -4,8 +4,10 @@ import React, { useEffect, useRef, useState } from "react"
 import { VideoComponent } from "./Styled"
 
 const Video = ({ selected, children, uniqueid }) => {
+  const [ready, prepare] = useState(false)
+
   const canPlayCallBack = () => {
-    console.log("YAO")
+    prepare(true)
   }
   const vidRef = useRef()
 
@@ -28,6 +30,7 @@ const Video = ({ selected, children, uniqueid }) => {
 
   return (
     <VideoComponent
+      ready={ready}
       id={uniqueid + "-video"}
       loop
       muted
