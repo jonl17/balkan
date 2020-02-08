@@ -9,6 +9,7 @@ export const Container = styled.div`
   box-sizing: border-box;
   padding-top: 150px;
   height: 100%;
+  width: 7%;
   ${props =>
     props.position === `left` &&
     css`
@@ -24,5 +25,6 @@ export const Text = styled.p`
   transform: rotate(${props => props.rotation});
   margin: 0;
   text-transform: uppercase;
+  color: white;
 `
 export const Anchor = styled(Link)``

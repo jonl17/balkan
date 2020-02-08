@@ -10,7 +10,7 @@ export const VideoComponent = styled.video`
     props.selected &&
     css`
       height: 100%;
-      padding-bottom: 150px;
+      padding-bottom: 185px;
       box-sizing: border-box;
       margin: 0;
       width: auto;

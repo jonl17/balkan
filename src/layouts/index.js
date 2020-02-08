@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { SET_DEVICE } from "../state/action"
 import { GlobalStyle } from "../components/GlobalStyle"
 
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
         dispatch({ type: SET_DEVICE, width: window.innerWidth })
       )
     }
-  }, [window.innerWidth])
+  }, [dispatch])
   return (
     <>
       <GlobalStyle></GlobalStyle>

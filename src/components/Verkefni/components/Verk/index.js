@@ -8,8 +8,10 @@ import {
 } from "../../../../state/action"
 
 /** components */
-import { Box, Text } from "./Styled"
+import { Box } from "./Styled"
 import Video from "./components/Video"
+import Heading from "./components/Heading"
+import Description from "./components/Description"
 
 const callBackWide = (dispatch, title) => {
   dispatch(resizeHeader("Wide"))
@@ -68,16 +70,19 @@ const Verk = ({
         onMouseLeave={() => callBackNarrow(dispatch, selectedVerkefni)}
         title={title}
       >
+        <Heading
+          selected={selectedVerkefni === title ? true : false}
+          ourwork={["Code", "Design"]}
+          collab={"STUDIOSTUDIO"}
+        ></Heading>
         <Video selected={selectedVerkefni === title ? true : false}>
           <source src={forsidu_video.publicURL} type="video/webm"></source>
           <source src={forsidu_video.publicURL} type="video/mp4"></source>
         </Video>
-        <Text selected={selectedVerkefni === title ? true : false}>
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium dolo remque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore veritatis et quasi architecto beatae vitae dicta
-          sunt.
-        </Text>
+        <Description
+          selected={selectedVerkefni === title ? true : false}
+          title={title}
+        ></Description>
       </Box>
     </>
   )
