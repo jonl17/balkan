@@ -24,7 +24,14 @@ const Video = ({ selected, children, uniqueid }) => {
       dispatch({ type: INCREMENT_VIDEO_LOADED })
       load(true)
     })
-  }, [])
+
+    return () => {
+      video.removeEventListener("loadeddata", () => {
+        dispatch({ type: INCREMENT_VIDEO_LOADED })
+        load(true)
+      })
+    }
+  })
   console.log(loaded)
   return (
     <VideoComponent
