@@ -14,7 +14,7 @@ export const VideoComponent = styled.video`
       padding-bottom: 185px;
       box-sizing: border-box;
       margin: 0;
-      width: auto;
+      width: 100%;
     `}
-  opacity: ${props => (props.ready ? 1 : 0)};
+  height: ${props => (props.ready ? "100%" : "0%")};
 `
