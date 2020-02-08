@@ -19,7 +19,10 @@ const Video = ({ selected, children, uniqueid }) => {
   return (
     <VideoComponent
       ready={ready}
-      onCanPlay={() => prepare(true)}
+      onCanPlay={() => {
+        prepare(true)
+        console.log(uniqueid + " is ready")
+      }}
       id={uniqueid + "-video"}
       loop
       muted
