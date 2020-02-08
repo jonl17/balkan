@@ -16,6 +16,7 @@ export const Box = styled.div`
   ${props =>
     props.selected &&
     css`
+      margin-top: -15px;
       filter: blur(0px);
       width: 60%;
       height: 100%;

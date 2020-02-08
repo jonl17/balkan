@@ -4,6 +4,7 @@ export const MainContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  height: 45px;
 `
 export const SubContainer = styled.div`
   display: flex;

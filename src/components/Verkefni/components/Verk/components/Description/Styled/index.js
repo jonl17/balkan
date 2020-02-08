@@ -20,4 +20,8 @@ export const Text = styled.p`
 export const Anchor = styled.a`
   text-transform: uppercase;
   color: white;
+  transition: 0.2s ease-in-out;
+  &&:hover {
+    color: black;
+  }
 `
