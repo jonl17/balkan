@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react"
-import { useDispatch } from "react-redux"
 
 /** components */
 import { VideoComponent } from "./Styled"
@@ -16,13 +15,16 @@ const Video = ({ selected, children, uniqueid }) => {
 
   const [ready, prepare] = useState(false)
 
+  useEffect(() => {
+    vidRef.current.oncanplay = () => {
+      console.log("set")
+      prepare(true)
+    }
+  }, [vidRef])
+
   return (
     <VideoComponent
       ready={ready}
-      onCanPlay={() => {
-        prepare(true)
-        console.log(uniqueid + " is ready")
-      }}
       id={uniqueid + "-video"}
       loop
       muted
