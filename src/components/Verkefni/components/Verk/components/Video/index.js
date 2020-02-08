@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import { connect } from "react-redux"
+import { useDispatch } from "react-redux"
 
 /** components */
 import { VideoComponent } from "./Styled"
@@ -14,10 +14,13 @@ const Video = ({ selected, children, uniqueid }) => {
     }
   })
 
+  const [ready, prepare] = useState(false)
+
   return (
     <VideoComponent
+      ready={ready}
+      onCanPlay={() => prepare(true)}
       id={uniqueid + "-video"}
-      onLoad={() => console.log("loaded!")}
       loop
       muted
       ref={vidRef}
@@ -28,4 +31,4 @@ const Video = ({ selected, children, uniqueid }) => {
   )
 }
 
-export default connect()(Video)
+export default Video
