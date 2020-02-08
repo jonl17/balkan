@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from "react"
+import { useDispatch } from "react-redux"
 
 /** components */
 import { VideoComponent } from "./Styled"
+import { INCREMENT_VIDEO_LOADED } from "../../../../../../state/action"
 
-const Video = ({ selected, children, uniqueid }) => {
+const Video = ({ selected, children, uniqueid, animationdelay }) => {
   const [ready, prepare] = useState(false)
+  const dispatch = useDispatch()
 
   const canPlayCallBack = () => {
     prepare(true)
+    dispatch({ type: INCREMENT_VIDEO_LOADED })
   }
   const vidRef = useRef()
 
@@ -27,9 +31,10 @@ const Video = ({ selected, children, uniqueid }) => {
       vidRef.current.pause()
     }
   })
-
+  console.log("DELAY" + animationdelay / 2)
   return (
     <VideoComponent
+      animationdelay={animationdelay / 7}
       ready={ready}
       id={uniqueid + "-video"}
       loop

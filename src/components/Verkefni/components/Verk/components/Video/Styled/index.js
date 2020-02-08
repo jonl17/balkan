@@ -1,4 +1,13 @@
-import styled, { css } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
+
+const fadein = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
 
 export const VideoComponent = styled.video`
   top: 0;
@@ -16,5 +25,11 @@ export const VideoComponent = styled.video`
       margin: 0;
       width: 100%;
     `}
-  height: ${props => (props.ready ? "100%" : "0%")};
+  opacity: 0;
+  ${props =>
+    props.ready &&
+    css`
+      animation: ${fadein} 0.5s ease-in-out
+        ${props => props.animationdelay + `s`} forwards;
+    `}
 `

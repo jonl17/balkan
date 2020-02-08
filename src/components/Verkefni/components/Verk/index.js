@@ -35,8 +35,9 @@ const calculateIndexesToShow = (selectedIndex, thisIndex, direction) => {
 }
 
 const Verk = ({
+  animationdelay,
   verk: {
-    frontmatter: { title, forsidu_video, lysing },
+    frontmatter: { title, forsidu_video },
   },
   index,
   max,
@@ -76,6 +77,7 @@ const Verk = ({
           collab={"STUDIOSTUDIO"}
         ></Heading>
         <Video
+          animationdelay={animationdelay}
           uniqueid={forsidu_video.publicURL}
           selected={selectedVerkefni === title ? true : false}
         >
