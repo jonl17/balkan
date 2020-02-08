@@ -1,13 +1,11 @@
 import React, { useEffect, useRef, useState } from "react"
-import { connect, useDispatch } from "react-redux"
-import { INCREMENT_VIDEO_LOADED } from "../../../../../../state/action"
+import { connect } from "react-redux"
 
 /** components */
 import { VideoComponent } from "./Styled"
 
 const Video = ({ selected, children, uniqueid }) => {
   const vidRef = useRef()
-  const dispatch = useDispatch()
   useEffect(() => {
     if (selected) {
       vidRef.current.play()
@@ -16,26 +14,8 @@ const Video = ({ selected, children, uniqueid }) => {
     }
   })
 
-  const [loaded, load] = useState(false)
-
-  useEffect(() => {
-    let video = document.getElementById(uniqueid + "-video")
-    video.addEventListener("loadeddata", () => {
-      dispatch({ type: INCREMENT_VIDEO_LOADED })
-      load(true)
-    })
-
-    return () => {
-      video.removeEventListener("loadeddata", () => {
-        dispatch({ type: INCREMENT_VIDEO_LOADED })
-        load(true)
-      })
-    }
-  })
-  console.log(loaded)
   return (
     <VideoComponent
-      fadein={loaded}
       id={uniqueid + "-video"}
       onLoad={() => console.log("loaded!")}
       loop
