@@ -3,7 +3,6 @@ import styled, { css } from "styled-components"
 export const Box = styled.div`
   height: 100%;
   width: 15%;
-  /* background: lightgray; */
   transition: 0.5s;
   overflow: hidden;
   position: relative;
