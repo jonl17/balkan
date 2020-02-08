@@ -13,7 +13,11 @@ const Heading = ({ ourwork, collab, selected }) => {
       {/* OUR WORK: BLE */}
       <SubContainer ourwork>
         <Text description>Our work: </Text>
-        <Text>{ourwork}</Text>
+        {ourwork.map((work, index) => (
+          <Text key={index}>
+            {index !== ourwork.length - 1 ? work + "," : work}
+          </Text>
+        ))}
       </SubContainer>
       {/* COLLABORATION: BLO */}
       <SubContainer collab>
