@@ -16,6 +16,4 @@ export const VideoComponent = styled.video`
       margin: 0;
       width: auto;
     `}
-  
-  opacity: ${props => (props.ready ? 1 : 0)};
 `

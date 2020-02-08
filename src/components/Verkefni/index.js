@@ -5,17 +5,12 @@ import { graphql, StaticQuery } from "gatsby"
 import { Container } from "./Styled"
 import Verk from "./components/Verk"
 import Exit from "./components/Exit"
-import { useSelector } from "react-redux"
 
 const Verkefni = ({
   data: {
     allMarkdownRemark: { nodes: verkefni },
   },
 }) => {
-  const videosLoaded = useSelector(state => state.reducer.videosLoaded)
-  if (videosLoaded > 4) {
-    console.log("START ANIMATION")
-  }
   return (
     <>
       <Exit></Exit>

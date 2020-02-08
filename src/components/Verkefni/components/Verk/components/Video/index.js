@@ -5,6 +5,30 @@ import { VideoComponent } from "./Styled"
 
 const Video = ({ selected, children, uniqueid }) => {
   const vidRef = useRef()
+
+  useEffect(() => {
+    if (vidRef.current.readyState >= vidRef.HAVE_FUTURE_DATA) {
+      console.log("video can play!")
+    } else {
+      vidRef.current.addEventListener(
+        "canplay",
+        function() {
+          console.log("video can play!")
+        },
+        false
+      )
+    }
+    return () => {
+      vidRef.current.removeEventListener(
+        "canplay",
+        function() {
+          console.log("video can play!")
+        },
+        false
+      )
+    }
+  })
+
   useEffect(() => {
     if (selected) {
       vidRef.current.play()
@@ -13,18 +37,8 @@ const Video = ({ selected, children, uniqueid }) => {
     }
   })
 
-  const [ready, prepare] = useState(false)
-
-  useEffect(() => {
-    vidRef.current.oncanplay = () => {
-      console.log("set")
-      prepare(true)
-    }
-  }, [vidRef])
-
   return (
     <VideoComponent
-      ready={ready}
       id={uniqueid + "-video"}
       loop
       muted
