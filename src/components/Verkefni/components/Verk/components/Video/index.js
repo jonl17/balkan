@@ -4,29 +4,14 @@ import React, { useEffect, useRef, useState } from "react"
 import { VideoComponent } from "./Styled"
 
 const Video = ({ selected, children, uniqueid }) => {
+  const canPlayCallBack = () => {
+    console.log("YAO")
+  }
   const vidRef = useRef()
-
   useEffect(() => {
-    if (vidRef.current.readyState >= vidRef.HAVE_FUTURE_DATA) {
-      console.log("video can play!")
-    } else {
-      vidRef.current.addEventListener(
-        "canplay",
-        function() {
-          console.log("video can play!")
-        },
-        false
-      )
-    }
-    return () => {
-      vidRef.current.removeEventListener(
-        "canplay",
-        function() {
-          console.log("video can play!")
-        },
-        false
-      )
-    }
+    document
+      .getElementById(uniqueid + "-video")
+      .addEventListener("canplaythrough", () => canPlayCallBack())
   })
 
   useEffect(() => {
