@@ -75,7 +75,10 @@ const Verk = ({
           ourwork={["Code", "Design"]}
           collab={"STUDIOSTUDIO"}
         ></Heading>
-        <Video selected={selectedVerkefni === title ? true : false}>
+        <Video
+          uniqueid={forsidu_video.publicURL}
+          selected={selectedVerkefni === title ? true : false}
+        >
           <source src={forsidu_video.publicURL} type="video/webm"></source>
           <source src={forsidu_video.publicURL} type="video/mp4"></source>
         </Video>

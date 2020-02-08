@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const Container = styled.div`
   height: 100%;
@@ -10,4 +10,5 @@ export const Container = styled.div`
   left: 0;
   display: flex;
   justify-content: space-evenly;
+  transition: 0.5s;
 `

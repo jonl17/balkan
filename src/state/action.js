@@ -24,3 +24,7 @@ export const changeVerkefniDirection = direction => ({
   type: CHANGE_VERKEFNI_DIRECTION,
   direction,
 })
+export const INCREMENT_VIDEO_LOADED = "INCREMENT_VIDEO_LOADED"
+export const videoIncrementVideoLoaded = () => ({
+  type: INCREMENT_VIDEO_LOADED,
+})

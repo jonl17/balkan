@@ -1,24 +1,44 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
+import { connect, useDispatch } from "react-redux"
+import { INCREMENT_VIDEO_LOADED } from "../../../../../../state/action"
 
 /** components */
 import { VideoComponent } from "./Styled"
 
-class Video extends React.Component {
-  componentDidUpdate() {
-    if (this.props.selected) {
-      this.refs.vidRef.play()
+const Video = ({ selected, children, uniqueid }) => {
+  const vidRef = useRef()
+  const dispatch = useDispatch()
+  useEffect(() => {
+    if (selected) {
+      vidRef.current.play()
     } else {
-      this.refs.vidRef.pause()
+      vidRef.current.pause()
     }
-  }
-  render() {
-    const { selected } = this.props
-    return (
-      <VideoComponent loop muted ref="vidRef" selected={selected}>
-        {this.props.children}
-      </VideoComponent>
-    )
-  }
+  })
+
+  const [loaded, load] = useState(false)
+
+  useEffect(() => {
+    let video = document.getElementById(uniqueid + "-video")
+    video.addEventListener("loadeddata", () => {
+      dispatch({ type: INCREMENT_VIDEO_LOADED })
+      load(true)
+    })
+  }, [])
+  console.log(loaded)
+  return (
+    <VideoComponent
+      fadein={loaded}
+      id={uniqueid + "-video"}
+      onLoad={() => console.log("loaded!")}
+      loop
+      muted
+      ref={vidRef}
+      selected={selected}
+    >
+      {children}
+    </VideoComponent>
+  )
 }
 
-export default Video
+export default connect()(Video)

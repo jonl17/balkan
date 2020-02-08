@@ -4,6 +4,7 @@ import {
   SET_VERKEFNI_TITLE,
   SELECT_VERKEFNI,
   CHANGE_VERKEFNI_DIRECTION,
+  INCREMENT_VIDEO_LOADED,
 } from "./action"
 
 const initialState = {
@@ -13,6 +14,7 @@ const initialState = {
   selectedVerkefni: undefined,
   selectedIndex: undefined,
   verkefniDirection: "right",
+  videosLoaded: 0,
 }
 
 export default (state = initialState, action) => {
@@ -45,6 +47,8 @@ export default (state = initialState, action) => {
       }
     case CHANGE_VERKEFNI_DIRECTION:
       return { ...state, verkefniDirection: action.direction }
+    case INCREMENT_VIDEO_LOADED:
+      return { ...state, videosLoaded: state.videosLoaded + 1 }
     default:
       return state
   }

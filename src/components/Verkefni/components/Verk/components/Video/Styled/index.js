@@ -6,6 +6,13 @@ export const VideoComponent = styled.video`
   height: 100%;
   object-fit: cover;
   margin: auto;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  ${props =>
+    props.fadein &&
+    css`
+      opacity: 1;
+    `}
   ${props =>
     props.selected &&
     css`
