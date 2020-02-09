@@ -32,7 +32,7 @@ export const Text = styled.p`
   height: 100px;
   width: 100%;
   overflow-y: auto;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 120%;
   display: none;
   margin: 0;

@@ -21,8 +21,14 @@ const Heading = ({ ourwork, collab, selected }) => {
       </SubContainer>
       {/* COLLABORATION: BLO */}
       <SubContainer collab>
-        <Text description>Collaboration: </Text>
-        <Text>{collab}</Text>
+        {collab ? (
+          <>
+            <Text description>Collaboration: </Text>
+            <Text>{collab}</Text>
+          </>
+        ) : (
+          <></>
+        )}
       </SubContainer>
     </MainContainer>
   ) : (

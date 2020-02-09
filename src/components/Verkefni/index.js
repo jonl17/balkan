@@ -12,8 +12,6 @@ const Verkefni = ({
     allMarkdownRemark: { nodes: verkefni },
   },
 }) => {
-  const videosLoaded = useSelector(state => state.reducer.videosLoaded)
-  console.log(videosLoaded)
   return (
     <>
       <Exit></Exit>
@@ -36,11 +34,22 @@ export default props => (
   <StaticQuery
     query={graphql`
       {
-        allMarkdownRemark {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/verkefni/" } }
+        ) {
           nodes {
             frontmatter {
               title
               lysing
+              ourwork
+              collaboration
+              myndir {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
               forsidu_video {
                 publicURL
               }
