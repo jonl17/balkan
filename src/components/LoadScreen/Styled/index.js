@@ -10,6 +10,7 @@ export const Container = styled.div`
   opacity: ${props => (props.display ? 1 : 0)};
   pointer-events: none;
   transition: 0.2s ease-in-out;
+  background: black;
 `
 export const Logo = styled(BalkanSVG)`
   height: 100%;
@@ -17,4 +18,7 @@ export const Logo = styled(BalkanSVG)`
   width: 100%;
   box-sizing: border-box;
   padding: 10%;
+  g > path {
+    fill: white;
+  }
 `
