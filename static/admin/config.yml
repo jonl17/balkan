@@ -19,10 +19,18 @@ collections:
           name: "ourwork",
           widget: "select",
           multiple: true,
-          options: 
-            - { label: "Coding" }
-            - { label: "Design" }
-            - { label: "Content management" }
+          options: ["Coding", "Design", "Content management"],
         }
-      - { label: "Collaboration", name: "collaboration", widget: "string", required: false, default: null }
-      - { label: "Website URL", name: "websiteurl", widget: "string", required: false }
+      - {
+          label: "Collaboration",
+          name: "collaboration",
+          widget: "string",
+          required: false,
+          default: null,
+        }
+      - {
+          label: "Website URL",
+          name: "websiteurl",
+          widget: "string",
+          required: false,
+        }
