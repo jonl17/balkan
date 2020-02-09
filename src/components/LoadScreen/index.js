@@ -7,7 +7,7 @@ import { Container, Logo } from "./Styled"
 const Loadscreen = () => {
   const videosLoaded = useSelector(state => state.reducer.videosLoaded)
   return (
-    <Container display={videosLoaded < 5}>
+    <Container display={videosLoaded < 5 ? "true" : "false"}>
       <Logo></Logo>
     </Container>
   )

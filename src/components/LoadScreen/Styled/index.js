@@ -7,7 +7,7 @@ export const Container = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  opacity: ${props => (props.display ? 1 : 0)};
+  opacity: ${props => (props.display === "true" ? 1 : 0)};
   pointer-events: none;
   transition: 0.2s ease-in-out;
   background: black;
