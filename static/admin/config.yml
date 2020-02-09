@@ -15,9 +15,9 @@ collections:
       - { label: "Lýsing", name: "lysing", widget: "text" }
       - { label: "Forsíðu vidjó", name: "forsidu-video", widget: "file" }
       - label: "Myndir"
-          name: "myndir"
-          widget: "list"
-          field: { label: Image, name: image, widget: image }
+        name: "myndir"
+        widget: "list"
+        field: { label: Image, name: image, widget: image }
       - {
           label: "Our work",
           name: "ourwork",
