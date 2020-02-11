@@ -4,20 +4,22 @@ backend:
 media_folder: "static/assets"
 public_folder: "assets"
 
-# Verkefni
 collections:
+  # Verkefni
   - name: "verkefni"
     label: "Verkefni"
     folder: "static/verkefni"
     create: true
+    editor:
+      preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Lýsing", name: "lysing", widget: "text" }
       - { label: "Forsíðu vidjó", name: "forsidu-video", widget: "file" }
-      - label: "Myndir"
-        name: "myndir"
+      - label: "Assets"
+        name: "assets"
         widget: "list"
-        field: { label: Image, name: image, widget: image }
+        field: { label: "Asset", name: "asset", widget: "file" }
       - {
           label: "Our work",
           name: "ourwork",
@@ -38,3 +40,15 @@ collections:
           widget: "string",
           required: false,
         }
+  # Starfsmenn
+  - name: "starfsmenn"
+    label: "Starfsmenn"
+    folder: "static/starfsmenn"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Nafn", name: "title", widget: "string" }
+      - { label: "Job", name: "job", widget: "string" }
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Mynd", name: "mynd", widget: "image" }
