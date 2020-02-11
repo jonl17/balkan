@@ -12,6 +12,7 @@ import { Box } from "./Styled"
 import Video from "./components/Video"
 import Heading from "./components/Heading"
 import Description from "./components/Description"
+import Carousel from "./components/Carousel"
 
 const callBackWide = (dispatch, title) => {
   dispatch(resizeHeader("Wide"))
@@ -76,14 +77,16 @@ const Verk = ({
           ourwork={ourwork}
           collab={collaboration}
         ></Heading>
-        <Video
-          animationdelay={animationdelay}
-          uniqueid={forsidu_video.publicURL}
-          selected={selectedVerkefni === title ? true : false}
-        >
-          <source src={forsidu_video.publicURL} type="video/webm"></source>
-          <source src={forsidu_video.publicURL} type="video/mp4"></source>
-        </Video>
+        <Carousel selected={selectedVerkefni === title ? true : false}>
+          <Video
+            animationdelay={animationdelay}
+            uniqueid={forsidu_video.publicURL}
+            selected={selectedVerkefni === title ? true : false}
+          >
+            <source src={forsidu_video.publicURL} type="video/webm"></source>
+            <source src={forsidu_video.publicURL} type="video/mp4"></source>
+          </Video>
+        </Carousel>
         <Description
           selected={selectedVerkefni === title ? true : false}
           title={title}

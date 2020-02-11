@@ -11,6 +11,7 @@ export const Container = styled.div`
   pointer-events: none;
   transition: 0.2s ease-in-out;
   background: black;
+  z-index: 20;
 `
 export const Logo = styled(BalkanSVG)`
   height: 100%;

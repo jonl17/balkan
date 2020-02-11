@@ -10,7 +10,6 @@ export const Box = styled.div`
   flex-direction: column;
   filter: blur(3px);
   &&:hover {
-    cursor: pointer;
     filter: blur(0px);
   }
   ${props =>
@@ -20,6 +19,13 @@ export const Box = styled.div`
       filter: blur(0px);
       width: 60%;
       height: 100%;
+    `}
+  ${props =>
+    !props.selected &&
+    css`
+      &&:hover {
+        cursor: pointer;
+      }
     `}
 `
 

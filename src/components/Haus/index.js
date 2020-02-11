@@ -1,9 +1,16 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, StaticQuery } from "gatsby"
 import { useSelector, useDispatch } from "react-redux"
 import { selectVerkefni, resizeHeader } from "../../state/action"
 /** components */
-import { Container, Word, Letter, ImageContainer, Image } from "./Styled"
+import {
+  Container,
+  Word,
+  Letter,
+  ImageContainer,
+  Image,
+  Anchor,
+} from "./Styled"
 
 const Haus = ({
   data: {
@@ -19,10 +26,12 @@ const Haus = ({
   const verkefni = useSelector(state => state.reducer.verkefniTitle)
   const verkefniTitle = [verkefni]
   const dispatch = useDispatch()
+  const selectedVerkefni = useSelector(state => state.reducer.selectedVerkefni)
   var displayTitle = title
   if (headerFullSize === "Wide") {
     displayTitle = verkefniTitle
   }
+
   return (
     <>
       <Container>
@@ -35,14 +44,16 @@ const Haus = ({
         ))}
       </Container>
       {/* klikk á lógóið af-velur eitthvað sérstakt verkefni  */}
-      <ImageContainer
-        onClick={() => {
-          dispatch(selectVerkefni(undefined, undefined))
-          dispatch(resizeHeader("Narrow"))
-        }}
-      >
-        <Image fluid={fluid}></Image>
-      </ImageContainer>
+      <Anchor to="/">
+        <ImageContainer
+          onClick={() => {
+            dispatch(selectVerkefni(undefined, undefined))
+            dispatch(resizeHeader("Narrow"))
+          }}
+        >
+          <Image fluid={fluid}></Image>
+        </ImageContainer>
+      </Anchor>
     </>
   )
 }

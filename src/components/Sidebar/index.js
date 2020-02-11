@@ -1,8 +1,10 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
+import { useDispatch } from "react-redux"
+import { selectVerkefni } from "../../state/action"
 
 /** components */
-import { Container, Text } from "./Styled"
+import { Container, Text, Anchor } from "./Styled"
 
 /**
  *  Left || Right
@@ -17,10 +19,14 @@ const Sidebar = ({
     },
   },
 }) => {
+  const dispatch = useDispatch()
+
   if (position === `left`) {
     return (
       <Container position={position}>
+        {/* contact */}
         <Text rotation={`-90deg`}>{navitems[0]}</Text>
+        {/* instagram */}
         <Text rotation={`-90deg`}>{navitems[1]}</Text>
       </Container>
     )
@@ -28,7 +34,10 @@ const Sidebar = ({
   if (position === `right`) {
     return (
       <Container position={position}>
-        <Text rotation={`90deg`}>{navitems[2]}</Text>
+        {/* about */}
+        <Text rotation={`90deg`}>
+          <Anchor to="/about">{navitems[2]}</Anchor>
+        </Text>
         <Text rotation={`90deg`}>{navitems[3]}</Text>
       </Container>
     )

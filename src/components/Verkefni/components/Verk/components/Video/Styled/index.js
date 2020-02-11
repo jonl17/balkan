@@ -16,11 +16,11 @@ export const VideoComponent = styled.video`
   object-fit: cover;
   margin: auto;
   transition: 0.5s ease-in-out;
+  position: absolute;
   ${props =>
     props.selected &&
     css`
       height: 100%;
-      padding-bottom: 185px;
       box-sizing: border-box;
       margin: 0;
       width: 100%;

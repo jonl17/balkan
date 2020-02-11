@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import Img from "gatsby-image"
+import { Link } from "gatsby"
 
 export const Container = styled.div`
   height: auto;
@@ -37,3 +38,4 @@ export const ImageContainer = styled.div`
   z-index: 10;
 `
 export const Image = styled(Img)``
+export const Anchor = styled(Link)``
