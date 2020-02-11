@@ -1,22 +1,10 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-  position: absolute;
+  position: relative;
   bottom: 0;
-`
-
-export const Text = styled.p`
-  height: 100px;
-  width: 100%;
-  overflow-y: auto;
-  font-size: 16px;
-  line-height: 120%;
-  display: none;
-  margin: 0;
-  box-sizing: border-box;
   padding-top: 15px;
-  padding-right: 10px;
-  display: inline-block;
+  overflow-y: auto;
   &::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 5px;
@@ -28,6 +16,18 @@ export const Text = styled.p`
     width: 5px;
     background: black;
   }
+`
+
+export const Text = styled.p`
+  width: 100%;
+  font-size: 16px;
+  line-height: 120%;
+  display: none;
+  margin: 0;
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-right: 10px;
+  display: inline-block;
 `
 export const Anchor = styled.a`
   text-transform: uppercase;

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-// 16:9 ratio
+// 16:10.28 ratio -> moddar fyrir skjáinn hans Ívars
 // https://css-tricks.com/aspect-ratio-boxes/
 export const AspectRatioBox = styled.div`
   overflow: hidden;
